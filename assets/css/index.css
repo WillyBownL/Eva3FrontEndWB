@@ -1,18 +1,11 @@
-/*
-1.	5 secciones (Ejemplo. Misión y Vision, Quienes Somos, Video, 
-Mapa de la ubicación, Formulario de Contacto, entre otros)
-2.	1 formulario de contacto
-3.	Aplicar diseño a través de CSS
-4.	Debe tener un menú que te permita desplazarte en la pagina
-5.	Debe tener imágenes
-6.	Debe permitir enlazar a redes sociales
-7.	Implementa un video o mapa
-*/
 body{
     background-color: black;
 }
 h1,a,p,h2,label{
     color: rgb(206, 206, 0);
+}
+a,#btnTmnLetra,#btnContraste{
+    margin-right: 2px;
 }
 header{
     margin: 30px;
@@ -31,13 +24,24 @@ nav{
 #QuienesSon,#Inicios,#LinksRRSS,#CancionMasConocida,#Contacto{
     text-align: center;
 }
-form{
+#formulario{
     width: 100%;
     display: grid;
     box-sizing: border-box;
 }
-input,textarea,button{
+input,textarea,button,select{
     background-color: black;
     color: rgb(206, 206, 0);
     border-color: white;
+}
+
+label{
+    margin-top: 15px;
+}
+#btnEnviar{
+    margin-top: 15px;
+}
+#tycConfirmarSeccion, #RecibirNovSeccion{
+    display: flexbox;
+    margin-top: 15px;
 }

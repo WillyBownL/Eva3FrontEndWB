@@ -18,8 +18,10 @@
         <a href="#QuienesSon">Quienes son</a>
         <a href="#Inicios">Inicios</a>
         <a href="#LinksRRSS">Links RRSS</a>
-        <a href="#CancionMasConocida">Cancion mas conocida</a>
+        <a href="#CancionMasConocida">Canción mas conocida</a>
         <a href="#Contacto">Contacto</a>
+        <button type="button" id="btnContraste">Contraste</button>
+        <button type="button" id="btnTmnLetra">Tamaño de letra</button>
     </nav>
     <div id="Contenido">
         <div id="QuienesSon">
@@ -81,15 +83,44 @@
 
         <div id="Contacto">
             <h2>Contacta a la pagina</h2>
-            <form>
-                <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre" placeholder="Escriba su Nombre"><br>
-                <label for="correo">Correo:</label><br>
-                <input type="text" id="correo" name="correo" placeholder="Escriba su Correo"><br>
-                <label for="texto">Comentario:</label><br>
-                <textarea name="Comentario" rows="5" cols="30" placeholder="Escriba su Comentario"></textarea><br>
-                <button type="button">Enviar</button>
-            </form>
+            <div id="formulario">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escriba su Nombre">
+                
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Escriba su Apellido">
+                
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" placeholder="Escriba su País de residencia">
+                
+                <label for="correo">Correo:</label>
+                <input type="text" id="correo" name="correo" placeholder="Escriba su Correo">
+                
+                <label for="genero">Genero:</label>
+                <select name="genero" id="genero">
+                    <option value="">-Ingresa el Genero con el que te identificas-</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option> 
+                    <option value="otro">Otro</option> 
+                    <option value="noDecir">Prefiero no decirlo</option> 
+                </select>
+                
+                <label for="texto">Comentario:</label>
+                <textarea name="Comentario" id="comentario" rows="5" cols="30" placeholder="Escriba su Comentario"></textarea>
+
+
+                <div id="tycConfirmarSeccion">
+                    <input type="checkbox" id="tycConfirmar">
+                    <label for="tycConfirmar">Acepto los terminos y condiciones</label>
+                </div>
+
+                <div id="RecibirNovSeccion">
+                    <input type="checkbox" id="recibirNovedades">
+                    <label for="recibirNovedades">Quiero recibir noticias y novedades a mi correo</label>
+                </div>
+
+                <button type="button" id="btnEnviar">Enviar</button>
+            </div>
         </div>
     </div>
 </body>
