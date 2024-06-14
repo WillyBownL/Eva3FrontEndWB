@@ -1,8 +1,8 @@
 body{
     background-color: black;
 }
-h1,a,p,h2,label{
-    color: rgb(206, 206, 0);
+h1,a,p,h2,label,table{
+    color: white;
 }
 a,#btnTmnLetra,#btnContraste{
     margin-right: 2px;
@@ -21,7 +21,7 @@ nav{
     margin-left: 20%;
     margin-right: 20%;
 }
-#QuienesSon,#Inicios,#LinksRRSS,#CancionMasConocida,#Contacto{
+#QuienesSon,#Inicios,#LinksRRSS,#CancionMasConocida,#Registro{
     text-align: center;
 }
 #formulario{
@@ -31,17 +31,36 @@ nav{
 }
 input,textarea,button,select{
     background-color: black;
-    color: rgb(206, 206, 0);
+    color: white;
     border-color: white;
 }
 
 label{
     margin-top: 15px;
 }
+textarea{
+    margin-bottom: 15px;
+}
 #btnEnviar{
     margin-top: 15px;
 }
-#tycConfirmarSeccion, #RecibirNovSeccion{
+#TyCdiv, #RecibirNovSeccion{
     display: flexbox;
     margin-top: 15px;
+}
+#pnombre,#papellido,#ppais,#pcorreo,#pgenero,#pTyC,span{
+    color: red;
+}
+table{
+    border: 2px solid;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+th,td{
+    padding: 20px;
+}
+#btnActualizar{
+    margin-top: 15px;
+    display: none;
 }

@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/index.css">
-    <script src="assets/scripts/script.js"></script>
-    <script src="assets/scripts/credenciales.js"></script>
-    <script src="assets/scripts/promesas.js"></script>
-    <script src="assets/scripts/firebase.js"></script>
+    <script type="module" src="assets/scripts/script.js"></script>
+    <script type="module" src="assets/scripts/firebase.js"></script>
 </head>
 <body>
     <header>
@@ -81,22 +79,26 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/bpOSxM0rNPM?si=GbVuhZLkP8sJguC5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
-        <div id="Contacto">
-            <h2>Contacta a la pagina</h2>
+        <div id="Registro">
+            <h2>Registro</h2>
             <div id="formulario">
-                <label for="nombre">Nombre:</label>
+                <label for="nombre">Nombre<span>*</span>:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Escriba su Nombre">
+                <p class="none" id="pnombre"></p>
                 
-                <label for="apellido">Apellido:</label>
+                <label for="apellido">Apellido<span>*</span>:</label>
                 <input type="text" id="apellido" name="apellido" placeholder="Escriba su Apellido">
-                
-                <label for="pais">País:</label>
+                <p class="none" id="papellido"></p>
+
+                <label for="pais">País<span>*</span>:</label>
                 <input type="text" id="pais" name="pais" placeholder="Escriba su País de residencia">
-                
-                <label for="correo">Correo:</label>
+                <p class="none" id="ppais"></p>
+
+                <label for="correo">Correo<span>*</span>:</label>
                 <input type="text" id="correo" name="correo" placeholder="Escriba su Correo">
-                
-                <label for="genero">Genero:</label>
+                <p class="none" id="pcorreo"></p>
+
+                <label for="genero">Genero<span>*</span>:</label>
                 <select name="genero" id="genero">
                     <option value="">-Ingresa el Genero con el que te identificas-</option>
                     <option value="masculino">Masculino</option>
@@ -104,24 +106,43 @@
                     <option value="otro">Otro</option> 
                     <option value="noDecir">Prefiero no decirlo</option> 
                 </select>
+                <p class="none" id="pgenero"></p>
                 
-                <label for="texto">Comentario:</label>
-                <textarea name="Comentario" id="comentario" rows="5" cols="30" placeholder="Escriba su Comentario"></textarea>
+                <label for="descripcion">Descripcion:</label>
+                <textarea id="descripcion" rows="5" cols="30" placeholder="Escriba una descripcion de usted"></textarea>
 
 
-                <div id="tycConfirmarSeccion">
-                    <input type="checkbox" id="tycConfirmar">
-                    <label for="tycConfirmar">Acepto los terminos y condiciones</label>
+                <div id="TyCdiv">
+                    <input type="checkbox" id="TyC">
+                    <label for="TyC">Acepto los terminos y condiciones<span>*</span></label>
+                    <p class="none" id="pTyC"></p>
                 </div>
 
                 <div id="RecibirNovSeccion">
-                    <input type="checkbox" id="recibirNovedades">
-                    <label for="recibirNovedades">Quiero recibir noticias y novedades a mi correo</label>
+                    <input type="checkbox" id="RN">
+                    <label for="RN">Quiero recibir noticias y novedades a mi correo</label>
                 </div>
 
                 <button type="button" id="btnEnviar">Enviar</button>
-            </div>
-        </div>
-    </div>
+                <button type="button" id="btnActualizar">Actualizar</button>
+            
+                </div>
+                </div>
+                </div>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Pais</th>
+            <th>Correo</th>
+            <th>Genero</th>
+            <th>Descripcion</th>
+            <th>Terminos y Condiciones</th>
+            <th>Recibir Notificaciones</th>
+        </thead>
+        <tbody id="cuerpoTabla">
+            
+        </tbody>
+    </table>
 </body>
 </html>
