@@ -56,7 +56,10 @@ const enviar = () =>{           // FUNCION DE INGRESO DE NUEVAS CUENTAS
     if(!invalido && confirm("¿Seguro que quieres crear a :\n"+vNombre+" "+vApellido+"?")){      // Seguido de la revision de la variable invalido se hace una confirmacion en pop up 
         // Se crea el objeto
         let objeto = {nombre:vNombre,apellido:vApellido,pais:vPais,correo:vCorreo,genero:vGenero,descripcion:vDescripcion,TyC:vTyC,RN:vRN}
-        registrarCuenta(objeto);
+        registrarCuenta(objeto).then(()=>{
+            alert("Creado con exito");
+            cargarDatos();
+        })
 
         document.getElementById("nombre").value = ""; 
         document.getElementById("apellido").value = ""; 
@@ -95,7 +98,10 @@ const actualizar = () =>{                       // FUNCION ACTUALIZAR APLICADO A
         // Se crea y envia objeto 
         let objeto = {nombre:vNombre,apellido:vApellido,pais:vPais,correo:vCorreo,genero:vGenero,descripcion:vDescripcion,TyC:vTyC,RN:vRN}   
         let id = document.getElementById("btnActualizar").value;            // Se trae el id del objeto a actualizar 
-        actualizarCuenta(objeto,id);                                        // Se utilizan los nuevos datos y la id recuperada en la funcio actualizar encontrada en promesas *
+        actualizarCuenta(objeto,id).then(()=>{                                        // Se utilizan los nuevos datos y la id recuperada en la funcio actualizar encontrada en promesas *
+            alert("Actualizado con exito con exito");
+            cargarDatos();
+        })
         let bAct = document.getElementById("btnActualizar");                
         let bEnv = document.getElementById("btnEnviar");                    // Se vuelve a hacer visible el boton eliminar e invisible el boton actualizar 
         bAct.style.display = "none";                                        
@@ -236,7 +242,7 @@ const cargarDatos = ()=>(
             });
             let btnDelete = document.getElementById("DEL"+c.id);                                // FUNCION DELETE
             btnDelete.addEventListener("click",() => {                                          // Se hace un listener al boton delete
-                if(confirm("¿Seguro de eliminar a :\nNombre"+c.nombre+" "+c.apellido+"?")){     // se confirma a travez de un pop up
+                if(confirm("¿Seguro de eliminar a :\n"+c.nombre+" "+c.apellido+"?")){     // se confirma a travez de un pop up
                     eliminarCuenta(c.id).then(()=>{
                         alert("Eliminado con exito");
                         cargarDatos();
